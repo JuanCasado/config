@@ -1,8 +1,7 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+#!/bin/zsh
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  . "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 export ZSH=$HOME/.oh-my-zsh
@@ -89,6 +88,16 @@ plugins=(
   term_tab
   thefuck
   timer
+  universalarchive
+  urltools
+  vi-mode
+  wd
+  yarn
+  z
+  zoxide
+  zsh-autosuggestions
+  zsh-interactive-cd
+  zsh-navigation-tools
   zsh-history-substring-search
 )
 
@@ -98,12 +107,13 @@ source $ZSH/oh-my-zsh.sh
 
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
 export EDITOR='nvim'
 
 alias vi=nvim
 alias vim=nvim
 
-[ -f ~/.profile ] && . ~/.profile
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.profile ]] && . ~/.profile
+[[ -f ~/.p10k.zsh ]] && . ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
