@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$ZSH/custom
 
@@ -7,6 +14,8 @@ COMPLETION_WAITING_DOTS=true
 ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_AUTOCONNECT=true
 ZSH_TMUX_AUTOQUIT=true
+ZSH_TMUX_UNICODE=true
+ZSH_PYENV_QUIET=false
 
 zstyle ':omz:update' mode reminder
 zstyle ':omz:update' frequency 14
@@ -14,7 +23,9 @@ zstyle ':omz:update' frequency 14
 DISABLE_UNTRACKED_FILES_DIRTY=true
 HIST_STAMPS="dd/mm/yyyy HH:MM:SS"  # see 'man strftime' for details.
 
-ZSH_THEME="af-magic"
+PROJECT_PATHS=(~/code ~)
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   autojump
   bun
@@ -45,8 +56,40 @@ plugins=(
   gitignore
   golang
   gpg-agent
-  zsh-history-substring-search
   httpie
+  isodate
+  jsontools
+  jump
+  last-working-dir
+  man
+  mvn
+  node
+  npm
+  nvm
+  pep8
+  percol
+  perms
+  pip
+  pipenv
+  pj
+  pyenv
+  pylint
+  python
+  qrcode
+  react-native
+  ripgrep
+  rsync
+  rust
+  scala
+  scd
+  sprunge
+  ssh-agent
+  stack
+  supervisor
+  term_tab
+  thefuck
+  timer
+  zsh-history-substring-search
 )
 
 ZSH_COLORIZE_STYLE="colorful"
@@ -62,3 +105,5 @@ alias vim=nvim
 
 [ -f ~/.profile ] && . ~/.profile
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
