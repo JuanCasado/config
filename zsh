@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 export ZSH=$HOME/.oh-my-zsh
+export PATH=$PATH:~/.local/bin
 ZSH_CUSTOM=$ZSH/custom
 
 CASE_SENSITIVE=false
@@ -107,11 +108,10 @@ export LANGUAGE="en_US.UTF-8"
 export TZ="Europe/Madrid"
 export EDITOR='nvim'
 
-
+source $ZSH/oh-my-zsh.sh
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   . "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-source $ZSH/oh-my-zsh.sh
 
 alias vi=nvim
 alias vim=nvim
