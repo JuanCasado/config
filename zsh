@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  . "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$ZSH/custom
 
@@ -103,14 +99,19 @@ plugins=(
 
 ZSH_COLORIZE_STYLE="colorful"
 
-source $ZSH/oh-my-zsh.sh
-
 export MANPATH="/usr/local/man:$MANPATH"
-export LANG=en_US.UTF-8
+export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
+export TZ="Europe/Madrid"
 export EDITOR='nvim'
+
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  . "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+source $ZSH/oh-my-zsh.sh
 
 alias vi=nvim
 alias vim=nvim
