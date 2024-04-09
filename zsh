@@ -2,6 +2,7 @@
 
 export ZSH=$HOME/.oh-my-zsh
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/usr/lib/cargo/bin
 ZSH_CUSTOM=$ZSH/custom
 
 CASE_SENSITIVE=false
