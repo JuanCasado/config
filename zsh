@@ -7,8 +7,10 @@ ZSH_CUSTOM=$ZSH/custom
 CASE_SENSITIVE=false
 HYPHEN_INSENSITIVE=false
 COMPLETION_WAITING_DOTS=true
+ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
-ZSH_TMUX_AUTOCONNECT=true
+ZSH_TMUX_AUTOCONNECT=false
+ZSH_TMUX_DETACHED=false
 ZSH_TMUX_AUTOQUIT=true
 ZSH_TMUX_UNICODE=true
 ZSH_PYENV_QUIET=false
@@ -85,6 +87,7 @@ plugins=(
   term_tab
   thefuck
   timer
+  tmux
   universalarchive
   urltools
   vi-mode
